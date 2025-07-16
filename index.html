@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PAPAGATLA PREETHI | Data Science Student</title>
+  <style>
+    :root {
+      --primary: #FF6B6B;
+      --accent: #4ECDC4;
+      --dark: #121212;
+      --light: #F8F9FA;
+      --gray: #2A2A2A;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--dark);
+      color: var(--light);
+      letter-spacing: 0.5px;
+    }
+
+    header {
+      background: linear-gradient(90deg, #1f1f1f, #2a2a2a);
+      color: white;
+      padding: 2rem 0;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 2rem;
+    }
+
+    nav a {
+      color: var(--light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      letter-spacing: 1px;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 4rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .hero p {
+      color: #cccccc;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--accent);
+      color: var(--dark);
+      border: none;
+      border-radius: 50px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease-in-out;
+      box-shadow: 0 5px 15px rgba(78, 205, 196, 0.3);
+    }
+
+    .btn:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .hero-image img {
+      width: 300px;
+      height: 300px;
+      border-radius: 20px;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      filter: grayscale(30%);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 2.5rem;
+      font-family: 'Courier New', Courier, monospace;
+      color: var(--primary);
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #1b1b1b;
+      padding: 2rem;
+      border-radius: 12px;
+      border-left: 5px solid var(--primary);
+      box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+      transition: transform 0.3s ease;
+      color: var(--light);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .card ul {
+      list-style-type: none;
+    }
+
+    .card li {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.5rem;
+      color: #e0e0e0;
+    }
+
+    .card li:before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    footer {
+      background: #101010;
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.95rem;
+      border-top: 2px solid var(--primary);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav ul {
+        margin-top: 1.5rem;
+      }
+
+      nav ul li {
+        margin: 0 1rem;
+      }
+
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 2rem 0;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero-image {
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+
+      .hero-image img {
+        width: 200px;
+        height: 200px;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <h2>PAPAGATLA PREETHI</h2>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Aspiring Data Analyst</h1>
+        <p>Transforming data into insights and building intelligent systems</p>
+        <p>Currently pursuing Data Science at Malla Reddy College of Engineering and Technology</p>
+        <a href="resume.pdf" class="btn" download>Download Resume</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://res.cloudinary.com/drzgklxcb/image/upload/v1752335588/WhatsApp_Image_2025-06-28_at_14.06.21_1613283b_stske3.jpg" alt="PAPAGATLA PREETHI" />
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <div class="card">
+<p>Hello! I'm PAPAGATLA PREETHI, a passionate and dedicated student pursuing Data Science at Malla Reddy College of Engineering and Technology. I enjoy turning data into meaningful insights and building intelligent web applications that solve real-world problems.</p>
+      <p>With a strong foundation in Python, Java, and front-end web development, I'm eager to explore the fields of machine learning and data visualization. I'm constantly learning and seeking new challenges to grow as a developer and data enthusiast.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills-container">
+      <div class="card">
+        <h3><i class="fas fa-laptop-code"></i> Programming</h3>
+        <ul>
+          <li>Python (Pandas, NumPy, Matplotlib)</li>
+          <li>Java (Core Concepts)</li>
+          <li>HTML5, CSS3, JavaScript</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-database"></i> Data Science</h3>
+        <ul>
+          <li>Data Analysis & Visualization</li>
+          <li>Machine Learning Fundamentals</li>
+          <li>SQL Database Management</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+        <ul>
+          <li>Jupyter Notebook</li>
+          <li>Git & GitHub</li>
+          <li>VS Code</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Academic Projects</h2>
+    <div class="card">
+      <h3>Featured Projects</h3>
+      <ul>
+        <li>💡 <strong>Student Performance Dashboard</strong> – Analyzed student marks using Python & Matplotlib</li>
+        <li>📊 <strong>COVID-19 Data Visualization</strong> – Built interactive plots using Plotly & Pandas</li>
+        <li>🧠 <strong>Mini Machine Learning Models</strong> – Implemented Linear Regression, KNN, and Naive Bayes</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Connect With Me</h2>
+    <div class="card">
+      <p>I'm actively seeking internship opportunities and collaborative projects in data science and web development.</p>
+      <ul>
+        <li><i class="fas fa-envelope"></i> Email: <a href="mailto:preethireddy925@gmail.com">preethireddy925@gmail.com</a></li>
+        <li><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/preethi175" target="_blank">linkedin.com/in/preethi175</a></li>
+        <li><i class="fab fa-github"></i> GitHub: <a href="https://github.com/Preethi925" target="_blank">github.com/Preethi925</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2024 PAPAGATLA PREETHI. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  const fadeElements = document.querySelectorAll('section');
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  fadeElements.forEach(element => {
+    element.style.opacity = 0;
+    element.style.transform = 'translateY(20px)';
+    element.style.transition = 'all 0.6s ease-out';
+    fadeObserver.observe(element);
+  });
+</script>
+
+</body>
+</html>
